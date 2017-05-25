@@ -1,42 +1,67 @@
 <div class="row">
+
   <div class="col-xs-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listing-title"> Listings</div>
+      <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+        <card :no-header="true" addition-class-name="card-banner card-yellow-light listing-properties">
+          <!-- <i class="icon fa fa-user-plus fa-4x"></i> -->
+          <!--TODO get the source from cloudinary-->
+          <div class="listing-logo">
+           <img class="icon img-listing-logo" src="~src/assets/images/logos/lamudi_logo.fw.png">
+          </div>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <today-sale-chart></today-sale-chart>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        <card :no-header="true" addition-class-name="card-banner card-green-light">
-          <i class="icon fa fa-shopping-basket fa-4x"></i>
           <div class="content">
-            <div class="title">Sale Today</div>
-            <div class="value"><span class="sign">$</span>420</div>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+            <div class="value"><span class="sign"></span>3050</div>
           </div>
         </card>
       </div>
 
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        <card :no-header="true" addition-class-name="card-banner card-blue-light">
-          <i class="icon fa fa-thumbs-o-up fa-4x"></i>
-          <div class="content">
-            <div class="title">Page Likes</div>
-            <div class="value"><span class="sign"></span>2453</div>
-          </div>
-        </card>
+      <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+            <card :no-header="true" addition-class-name="card-banner card-pink-light listing-properties">
+                    <!-- <i class="icon fa fa-user-plus fa-4x"></i> -->
+                    <!--TODO get the source from cloudinary-->
+                    <div class="listing-logo">
+                     <img class="icon img-listing-logo" src="~src/assets/images/logos/meqasa.fw.png">
+                    </div>
+
+                    <div class="content">
+                      <i class="fa fa-check-circle" aria-hidden="true"></i>
+                      <div class="value"><span class="sign"></span>3050</div>
+                    </div>
+            </card>
       </div>
 
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        <card :no-header="true" addition-class-name="card-banner card-yellow-light">
-          <i class="icon fa fa-user-plus fa-4x"></i>
-          <div class="content">
-            <div class="title">New Registration</div>
-            <div class="value"><span class="sign"></span>50</div>
-          </div>
-        </card>
+      <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+            <card :no-header="true" addition-class-name="card-banner card-blue-light listing-properties">
+                    <!-- <i class="icon fa fa-user-plus fa-4x"></i> -->
+                    <!--TODO get the source from cloudinary-->
+                    <div class="listing-logo">
+                     <img class="icon img-listing-logo" src="~src/assets/images/logos/olx.fw.png">
+                    </div>
+
+                    <div class="content">
+                      <i class="fa fa-check-circle" aria-hidden="true"></i>
+                      <div class="value"><span class="sign"></span>3050</div>
+                    </div>
+            </card>
       </div>
+
+      <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
+            <card :no-header="true" addition-class-name="card-banner card-green-light listing-properties">
+                    <!-- <i class="icon fa fa-user-plus fa-4x"></i> -->
+                    <!--TODO get the source from cloudinary-->
+                    <div class="listing-logo">
+                     <img class="icon img-listing-logo" src="~src/assets/images/logos/tonaton.fw.png">
+                    </div>
+
+                    <div class="content">
+                      <i class="fa fa-check-circle" aria-hidden="true"></i>
+                      <div class="value"><span class="sign"></span>3050</div>
+                    </div>
+            </card>
+      </div>
+
 
     </div>
 

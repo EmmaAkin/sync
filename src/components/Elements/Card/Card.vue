@@ -12,3 +12,8 @@
     ]
   }
 </script>
+<style>
+    .icon .img-listing-logo{
+            padding: 0px;
+        }
+</style>
