@@ -1,187 +1,609 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          Basic Elements
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Input">
-              <textarea name="name" rows="3" class="form-control"></textarea>
-              <input type="text" class="form-control" placeholder="Disabled" disabled="">
-              <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">
-                  <i class="fa fa-user" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" placeholder="Input group" aria-describedby="basic-addon1" value="">
-              </div>
-              <div>
-                <div class="checkbox">
-                  <input type="checkbox" id="checkbox1">
-                  <label for="checkbox1">
-                      Checkbox
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <input type="checkbox" id="checkbox2">
-                  <label for="checkbox2">
-                      Checkbox Square
-                  </label>
-                </div>
-              </div>
-              <div>
-                <div class="checkbox checkbox-inline">
-                  <input type="checkbox" id="checkbox3">
-                  <label for="checkbox3">
-                      Checkbox Inline
-                  </label>
-                </div>
-                <div class="checkbox checkbox-inline">
-                  <input type="checkbox" id="checkbox4">
-                  <label for="checkbox4">
-                      Checkbox Inline
-                  </label>
-                </div>
-              </div>
-              <div>
-                <div class="radio">
-                  <input type="radio" name="radio2" id="radio3" value="option1">
-                  <label for="radio3">
-                      One
-                  </label>
-                </div>
-                <div class="radio">
-                  <input type="radio" name="radio2" id="radio4" value="option2" checked="">
-                  <label for="radio4">
-                      Two
-                  </label>
-                </div>
-              </div>
-              <div>
-                <div class="radio radio-inline">
-                  <input type="radio" name="radio2" id="radio5" value="option1">
-                  <label for="radio5">
-                      One
-                  </label>
-                </div>
-                <div class="radio radio-inline">
-                  <input type="radio" name="radio2" id="radio6" value="option2" checked="">
-                  <label for="radio6">
-                      Two
-                  </label>
-                </div>
-              </div>
-              <select2 value="AL">
-                <option value="AL">Alabama</option>
-                <option value="WY">Wyoming</option>
-              </select2>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group has-success">
-                <input type="text" class="form-control" id="inputSuccess1" placeholder="Success">
-              </div>
-              <div class="form-group has-warning">
-                <input type="text" class="form-control" id="inputWarning1" placeholder="Warning">
-              </div>
-              <div class="form-group has-error">
-                <input type="text" class="form-control" id="inputError1" placeholder="Danger">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          Form Horizontal
-        </div>
-        <div class="card-body">
-          <form class="form form-horizontal">
-            <div class="section">
-              <div class="section-title">Information</div>
-              <div class="section-body">
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Name</label>
-                  <div class="col-md-9">
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-3">
-                    <label class="control-label">Description</label>
-                    <p class="control-label-help">( short detail of products , 150 max words )</p>
-                  </div>
-                  <div class="col-md-9">
-                    <textarea class="form-control"></textarea>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Price</label>
-                  <div class="col-md-9">
-                    <div class="input-group">
-                      <span class="input-group-addon">$</span>
-                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <div class="col-md-12">
+              <div class="card">
+                    <div class="card-header">
+                      Add a new Listing
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="section">
-              <div class="section-title">Warranty</div>
-              <div class="section-body">
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Type</label>
-                  <div class="col-md-9">
-                    <div class="radio radio-inline">
-                      <input type="radio" name="radio4" id="radio10" value="option10">
-                      <label for="radio10">
-                            Global
-                          </label>
-                    </div>
-                    <div class="radio radio-inline">
-                      <input type="radio" name="radio4" id="radio11" value="option11" checked="">
-                      <label for="radio11">
-                            Local
-                          </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Cover</label>
-                  <div class="col-md-4">
-                    <div class="input-group">
-                      <select2 value="1">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select2>
+                    <div class="card-body">
+                          <form-wizard @on-complete="onComplete"
+                                  color="gray"
+                                  error-color="#a94442"
+                                  >
+                                <tab-content title="Basic Information" icon="ti-user" :before-change="validateFirstTab">
+                                              <div class="row">
+                                                    <div class="col-md-8">
+                                                          <vue-form-generator
+                                                                :model="model"
+                                                                :schema="firstTabSchema"
+                                                                :options="formOptions"
+                                                                ref="firstTabForm">
+                                                          </vue-form-generator>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                          <h4>Tips</h4>
+                                                          <p>Writing a good title is important. Use words buyers would use to search for properties like yours.</p><br><strong><u>Important</u> : an ideal title should have a maximum of 50 characters</strong><br><br>
+                                                          <p>By selecting the right property type you can help the user to find the right property for his specific needs</p>
+                                                    </div>
+                                              </div>
+                                </tab-content>
 
-                      <span class="input-group-addon">Years</span>
+                                <tab-content title="Features"  icon="ti-settings" :before-change="validateSecondTab">
+                                      <div class="row">
+                                            <div class="col-md-8">
+                                                    <vue-form-generator
+                                                            :model="model"
+                                                            :schema="secondTabSchema"
+                                                            :options="formOptions"
+                                                            ref="secondTabForm"
+                                                    >
+                                                    </vue-form-generator>
+                                            </div>
+                                            <div class="col-md-4">
+
+                                            </div>
+                                      </div>
+
+
+                                </tab-content>
+                                  <tab-content title="Attachment"  icon="ti-settings" :before-change="validateThirdTab">
+                                      <div class="row">
+                                              <div class="col-md-8">
+                                                      <div v-if="!model.image" :model="model.image">
+                                                            <h2>Select an image</h2>
+                                                            <input type="file" @change="onFileChange">
+                                                            <div class="img-attachment">
+                                                                    <img src=""/>
+                                                            </div>
+                                                      </div>
+                                                      <div v-else class="" class="img-attachment">
+                                                            <img :src="model.image" />
+                                                            <button @click="removeImage">Remove image</button>
+                                                      </div>
+                                              </div>
+                                        </div>
+                                </tab-content>
+
+                                  <tab-content title="Price"  icon="ti-settings" :before-change="validateFourthTab">
+                                      <div class="row">
+                                              <div class="col-md-8">
+                                                    <vue-form-generator :model="model"
+                                                            :schema="fourthTabSchema"
+                                                            :options="formOptions"
+                                                            ref="fourthTabForm"
+                                                    >
+                                                    </vue-form-generator>
+                                              </div>
+                                      </div>
+                                </tab-content>
+
+
+                                <tab-content title="Last step" icon="ti-check">
+                                        <h4>Your json is ready!</h4>
+                                        <div class="panel-body">
+                                              <pre v-if="model" v-html="prettyJSON(model)"></pre>
+                                        </div>
+                                </tab-content>
+                          </form-wizard>
                     </div>
-                  </div>
-                </div>
               </div>
-            </div>
-            <div class="form-footer">
-              <div class="form-group">
-                <div class="col-md-9 col-md-offset-3">
-                  <button type="submit" class="btn btn-primary">Save</button>
-                  <button type="button" class="btn btn-default">Cancel</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
-    </div>
   </div>
 </template>
 
 <script>
+import VueFormGenerator from "vue-form-generator"
+import Multiselect from 'vue-multiselect'
+
+window.vueMultiSelect = Multiselect
+
   export default {
-    name: 'FormPage'
+    name: 'FormPage',
+    data() {
+            return {
+                          //TODO make this selection compatible with Lamudi selection
+                          subcategories: [
+                          {
+                            "name": "Apartment",
+                            "subcategories": [
+                                                          {
+                                                           "name": "Uncompleted"
+                                                           },
+                                                           {
+                                                            "name" :"Rooms"
+                                                           },
+                                                           {
+                                                            "name":"Apartment"
+                                                           },
+                                                           {
+                                                            "name":"Duplex apartment"
+                                                           },
+                                                           {
+                                                            "name":"Attic apartment"
+                                                           },
+                                                           {
+                                                            "name":"Loft"
+                                                           },
+                                                           {
+                                                            "name":"Penthouse"
+                                                           },
+                                                           {
+                                                            "name":"Special property"
+                                                           },
+                                                           {
+                                                            "name":"Other"
+                                                           }
+                             ]
+                          }
+                          ],
+                          model:{
+                          name:"Andrew",
+                          email:"test4@berkowitz.org",
+                          title:"",
+                          propertyType:'',
+                          subcategory:"",
+                          streetaddress:"",
+                          region:'',
+                          city:'',
+                          baths:"",
+                          bedrooms:"",
+                          livingarea:"",
+                          landarea:"",
+                          availableOn:"",
+                          floor:"",
+                          build:"",
+                          carspace:"",
+                          shortlet:"",
+                          Description:"",
+
+                          image:"",
+                          image_thumbnails1:"",
+                          image_thumbnails2:"",
+                          image_thumbnails3:"",
+                          image_thumbnails4:"",
+
+                          price:"",
+                          currency:"",
+                          priceAvailability:"",
+                          depositBond:"",
+                          agentCommission:"",
+                          pricingConditions:"",
+
+                          },
+                          selected: null,
+                          options: ['list', 'of', 'options'],
+                          formOptions: {
+                          validationErrorClass: "has-error",
+                          validationSuccessClass: "has-success",
+                          validateAfterChanged: true
+                          },
+                          firstTabSchema:{
+                                 fields:[{
+                                              type: "input",
+                                              inputType: "text",
+                                              label: "Title",
+                                              model: "title",
+                                              required:true,
+                                              validator:VueFormGenerator.validators.string,
+                                              styleClasses:'col-xs-6'
+                                           },
+                                           {
+                                              type: "select",
+                                              multiSelect: false,
+                                              placeholder: "Select your property type",
+                                              label: "Property Type",
+                                              model: "propertyType",
+                                              required:true,
+                                              selectOptions:{
+                                                  key:"name",
+                                                  label:"name",
+                                                  noneSelectedText:"Select your Propety Type",
+                                                  searchable: true,
+                                                  customLabel: function({name}){
+                                                    return `${name}`
+                                                  }
+                                              },
+                                              values:[
+                                                  {
+                                                    "name": "Apartment"
+                                                  },
+                                                  {
+                                                    "name": "House"
+                                                  },
+                                                  {
+                                                    "name": "Land"
+                                                  },
+                                                  {
+                                                    "name": "Commercial"
+                                                  },
+                                                  {
+                                                    "name": "Development"
+                                                  }
+                                              ],
+                                              styleClasses:'col-xs-6'
+                                           },
+                                                {
+                                              type: "select",
+                                              multiSelect: false,
+                                              placeholder: "Select your Category",
+                                              label: "Subcategory",
+                                              model: "subcategory",
+                                              required:true,
+                                              selectOptions:{
+                                                  key:"name",
+                                                  label:"name",
+                                                  noneSelectedText:"Select your Sub Category of this property Type",
+                                                  searchable: true,
+                                                  customLabel: function({name}){
+                                                    return `${name}`
+                                                  }
+                                              },
+                                              values:[
+                                                  {
+                                                    "name": "Uncompleted"
+                                                  },
+                                                  {
+                                                    "name": "Rooms"
+                                                  },
+                                                  {
+                                                    "name": "Single-Family House"
+                                                  },
+                                                  {
+                                                    "name": "Multi-Family House"
+                                                  },
+                                                  {
+                                                    "name":"Offices"
+                                                  },
+                                                  {
+                                                    "name": "Townhouse"
+                                                  },
+                                                  {
+                                                    "name": "Farm/Ranch"
+                                                  },
+                                                  {
+                                                    "name": "Special Property"
+                                                  },
+                                                  {
+                                                    "name": "Others"
+                                                  }
+                                              ],
+                                              styleClasses:'col-xs-6'
+                                           },
+                                          {
+                                            type: "input",
+                                            inputType: "text",
+                                            label: "Street Address",
+                                            model: "streetAddress",
+                                            required:true,
+                                            validator:VueFormGenerator.validators.string,
+                                            styleClasses:'col-xs-6'
+                                         },
+                                                {
+                                              type: "select",
+                                              multiSelect: false,
+                                              placeholder: "Select your Region",
+                                              label: "Region",
+                                              model: "region",
+                                              required:true,
+                                              selectOptions:{
+                                                  key:"name",
+                                                  label:"name",
+                                                  noneSelectedText:"Select the Region of the property",
+                                                  searchable: true,
+                                                  customLabel: function({name}){
+                                                    return `${name}`
+                                                  }
+                                              },
+                                              values:[
+                                                  {
+                                                    "name": "Ashanti Region"
+                                                  },
+                                                  {
+                                                    "name": "Brong-Ahafo Region"
+                                                  },
+                                                  {
+                                                    "name": "Central Region"
+                                                  },
+                                                  {
+                                                    "name": "Eastern Region"
+                                                  },
+                                                  {
+                                                    "name":"Ghana"
+                                                  },
+                                                  {
+                                                    "name": "Greater Accra Region"
+                                                  },
+                                                  {
+                                                    "name": "Northern Region"
+                                                  },
+                                                  {
+                                                    "name": "Upper East Region"
+                                                  },
+                                                  {
+                                                    "name": "Upper West Region"
+                                                  },
+                                                  {
+                                                    "name": "Volta Region"
+                                                  },
+                                                  {
+                                                    "name": "Western Region"
+                                                  }
+                                              ],
+                                              styleClasses:'col-xs-3'
+                                           }, {
+                                              type: "select",
+                                              multiSelect: false,
+                                              placeholder: "Select your City",
+                                              label: "City",
+                                              model: "city",
+                                              required:true,
+                                              selectOptions:{
+                                                  key:"name",
+                                                  label:"name",
+                                                  noneSelectedText:"Select the Region of the property",
+                                                  searchable: true,
+                                                  customLabel: function({name}){
+                                                    return `${name}`
+                                                  }
+                                              },
+                                              values:[
+                                                  {
+                                                    "name": "Barekese"
+                                                  },
+                                                  {
+                                                    "name": "Breman"
+                                                  },
+                                                  {
+                                                    "name": "Domeabra"
+                                                  },
+                                                  {
+                                                    "name": "Kumasi"
+                                                  },
+                                                  {
+                                                    "name":"Kwapia"
+                                                  }
+                                              ],
+                                              styleClasses:'col-xs-3'
+                                           }
+                                         ]
+                          },
+                          secondTabSchema:{
+                                     fields:[
+                                               {
+                                                  type: "input",
+                                                  inputType: "text",
+                                                  label: "Baths",
+                                                  model: "baths",
+                                                  required:true,
+                                                  validator:VueFormGenerator.validators.string,
+                                                  styleClasses:'col-xs-4'
+                                               },
+                                              {
+                                                type: "input",
+                                                inputType: "text",
+                                                label: "Bed",
+                                                model: "beds",
+                                                required:true,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-4'
+                                              },
+                                              {
+                                                type: "input",
+                                                inputType: "text",
+                                                label: "Bedrooms",
+                                                model: "bedrooms",
+                                                required:true,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-4'
+                                              },
+                                              {
+                                                type: "input",
+                                                inputType:"text",
+                                                label: "Living area (square meters)",
+                                                model: "livingarea",
+                                                required:true,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-6'
+                                              },
+                                              {
+                                                type: "input",
+                                                inputType:"text",
+                                                label: "Land Area (square meters)",
+                                                model: "landarea",
+                                                required:true,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-6'
+                                              },
+                                               {
+                                                type: "input",
+                                                inputType:"text",
+                                                label: "Available on",
+                                                model: "availableOn",
+                                                required:true,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-6'
+                                              }
+
+                                              ]
+                          },
+                           thirdTabSchema:{
+                                     fields:[
+                                               {
+                                                  type: "input",
+                                                  inputType: "file",
+                                                  label: "Select your Main Image",
+                                                  model: "image",
+                                                  required:true,
+                                                  styleClasses:'col-xs-4'
+                                               },
+                                                 {
+                                                  type: "input",
+                                                  inputType: "file",
+                                                  label: "Image",
+                                                  model: "image",
+                                                  required:true,
+                                                  styleClasses:'col-xs-4'
+                                               },
+                                                 {
+                                                  type: "input",
+                                                  inputType: "file",
+                                                  label: "Image",
+                                                  model: "image",
+                                                  required:true,
+                                                  styleClasses:'col-xs-4'
+                                               }
+
+                                              ]
+                          },
+                           fourthTabSchema:{
+                                     fields:[
+                                               {
+                                                  type: "input",
+                                                  inputType: "text",
+                                                  label: "Price",
+                                                  model: "price",
+                                                  required:true,
+                                                  validator:VueFormGenerator.validators.string,
+                                                  styleClasses:'col-xs-4'
+                                               },
+                                              {
+                                                type: "input",
+                                                inputType: "text",
+                                                label: "Currency",
+                                                model: "currency",
+                                                required:false,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-4'
+                                              },
+                                              {
+                                                type: "select",
+                                                inputType: "text",
+                                                label: "Show Price",
+                                                model: "priceAvailability",
+                                                required:false,
+                                                validator:VueFormGenerator.validators.string,
+                                                values:["Show price", "Hide the Price"],
+                                                styleClasses:'col-xs-4'
+                                              },
+                                              {
+                                                type: "input",
+                                                label: "Deposit Bond",
+                                                model: "depositBond",
+                                                required:false,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-4'
+                                              },
+                                              {
+                                                type: "input",
+                                                label: "Agent Commission",
+                                                model: "agentCommission",
+                                                required:false,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-4'
+                                              },
+                                              {
+                                                type: "input",
+                                                label: "Pricing Conditions",
+                                                model: "pricingConditions",
+                                                required:false,
+                                                validator:VueFormGenerator.validators.string,
+                                                styleClasses:'col-xs-4'
+                                              }
+                                              ]
+                          }
+                    }
+          },
+ methods: {
+  onComplete: function(){
+      alert('Yay. Done!');
+   },
+   validateFirstTab: function(){
+     return this.$refs.firstTabForm.validate();
+   },
+   validateSecondTab: function(){
+     return this.$refs.secondTabForm.validate();
+   },
+   validateThirdTab: function(){
+     return this.model.image !="";
+   },
+   validateFourthTab: function(){
+     return this.$refs.fourthTabForm.validate();
+   },
+   onFileChange(e){
+        var files = e.target.files || e.dataTransfer.files;
+        console.log(files);
+        if(!files.length)
+          return;
+        this.createImage(files[0]);
+   },
+   createImage(file){
+        var image = new Image();
+        var reader = new FileReader();
+        var vm = this.model;
+
+        reader.onload = (e) => {vm.image = e.target.result;};
+        reader.readAsDataURL(file);
+   },
+   removeImage: function(e){
+        this.image = "";
+   },
+
+    prettyJSON: function(json) {
+            if (json) {
+                json = JSON.stringify(json, undefined, 4);
+                json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+                return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+                    var cls = 'number';
+                    if (/^"/.test(match)) {
+                        if (/:$/.test(match)) {
+                            cls = 'key';
+                        } else {
+                            cls = 'string';
+                        }
+                    } else if (/true|false/.test(match)) {
+                        cls = 'boolean';
+                    } else if (/null/.test(match)) {
+                        cls = 'null';
+                    }
+                    return '<span class="' + cls + '">' + match + '</span>';
+                });
+            }
+        }
+   },
+   computed: {
+
+   },
+
+   components:{
+        Multiselect
+   }
+
   }
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+<style>
+.wizard-header{
+display: none;
+}
+  pre {
+  overflow: auto;
+}
+  pre .string { color: #885800; }
+  pre .number { color: blue; }
+  pre .boolean { color: magenta; }
+  pre .null { color: red; }
+  pre .key { color: green; }
+
+
+.img-attachment{
+    background-size:cover;
+    background-position: center;
+    height: 250px; width: 250px;
+    border: 1px solid #bbb;
+}
+  .img-attachment img{
+      max-width: 100%;
+      max-height: auto;
+  }
+
+</style>
