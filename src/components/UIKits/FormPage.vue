@@ -81,10 +81,22 @@
 
 
                                 <tab-content title="Last step" icon="ti-check">
-                                        <h4>Your json is ready!</h4>
-                                        <div class="panel-body">
-                                              <pre v-if="model" v-html="prettyJSON(model)"></pre>
+                                        <h4>This is the preview of your listing!</h4>
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                                <div class="img-preview">
+                                                  <img :src="model.image"/>
+                                                </div>
+                                              <h4 class="title-preview">{{model.title}}</h4>
+                                              <p class="short-description-preview"><i class="fa fa-map-marker" aria-hidden="true"></i> {{model.streetaddress}}, {{model.region.name}}, {{model.city.name}}</p>
+                                              <span class="price-preview"><strong>GHC {{model.price}}</strong></span></br>
+                                              <span class="beds-preview">{{model.beds}} Bedrooms</span>
+                                              <span class="baths-preview">{{model.baths}} Baths</span>
+                                              <span class="rooms-preview">{{model.rooms}} Rooms</span>
+                                              <div class="listing-platform">Lamudi</div>
                                         </div>
+                                        </div>
+
                                 </tab-content>
                           </form-wizard>
                     </div>
@@ -107,13 +119,11 @@ window.vueMultiSelect = Multiselect
             return {
                           //Handling images
                           cloudinary:{
-                            uploadPreset: ",
+                            uploadPreset: "",
                             apiKey: "",
                             cloudName:""
 
                           },
-
-
                           model:{
                           name:"Andrew",
                           email:"test4@berkowitz.org",
@@ -124,7 +134,8 @@ window.vueMultiSelect = Multiselect
                           region:'',
                           city:'',
                           baths:"",
-                          bedrooms:"",
+                          beds:"",
+                          rooms:"",
                           livingarea:"",
                           landarea:"",
                           availableOn:"",
@@ -132,7 +143,7 @@ window.vueMultiSelect = Multiselect
                           build:"",
                           carspace:"",
                           shortlet:"",
-                          Description:"",
+                          description:"",
 
                           image:"",
                           image_thumbnails1:"",
@@ -370,8 +381,8 @@ window.vueMultiSelect = Multiselect
                                               {
                                                 type: "input",
                                                 inputType: "number",
-                                                label: "Bedrooms",
-                                                model: "bedrooms",
+                                                label: "Rooms",
+                                                model: "rooms",
                                                 required:true,
                                                 validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-4'
@@ -602,5 +613,15 @@ display: none;
       max-width: 100%;
       max-height: 100%;
   }
+.img-preview{
+  width: 220px;
+  height: 220px;
+}
+.img-preview img{
+    display:block;
+    max-height: auto;
+    max-width: 100%;
+
+}
 
 </style>

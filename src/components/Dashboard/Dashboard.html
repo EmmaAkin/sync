@@ -67,15 +67,15 @@
 
     </div>
 
-    <div class="row row-listing">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 content-listing">
+    <div class="row row-listing" >
+        <div v-for = "list in listing" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 content-listing">
               <div class="image center-block">
-                    <img class="listing-img" v-bind:src="listing.image">
+                    <img class="listing-img" v-bind:src="list.image">
               </div>
               <div class="listing-content">
-                    <div class="description-excerpt">{{listing.propertyType}} having {{listing.bed}} beds and {{listing.bath}} baths at {{listing.description}}</div>
+                    <div class="description-excerpt">{{list.description}}</div>
 
-                    <div class="listing-details-price"><strong>{{listing.price}}</strong></div>
+                    <div class="listing-details-price"><strong>{{list.price}}</strong></div>
                     <hr>
                     <div class="listed-on">
                           <img class="icon lamudi" src="~src/assets/images/logos/lamudi_logo.fw.png">
@@ -84,11 +84,7 @@
                           <img class="icon tonaton" src="~src/assets/images/logos/tonaton.fw.png">
 
                     </div class="listed-rating">
-                    <div> <strong>Listed:</strong> 3/4</div>
-                   <!--    <div class="listing-details-features">
-                            <div class="bath">{{listing.bath}}</div>
-                            <div class="bed">{{listing.bed}}</div>
-                      </div> -->
+                    <div> <strong>Listed:</strong> {{getRandomlisting}}/4</div>
 
 
               </div>

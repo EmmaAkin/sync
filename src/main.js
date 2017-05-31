@@ -47,7 +47,7 @@ require('jquery')
 import hljs from 'highlightjs'
 hljs.initHighlightingOnLoad()
 
-Vue.prototype.listingModel = {};
+Vue.prototype.$listingModel = [];
 /* eslint-disable no-new */
 const router = new VueRouter({
   mode: 'history',

@@ -10,30 +10,193 @@ export default {
   name: 'Dashboard',
   data(){
         return{
-                listing:{
-                    "title":"",
-                    "description":"East Legon",
-                    "bed":"5",
-                    "bath":"4",
-                    "size":"",
-                    "streetAddress":"",
-                    "region":"",
-                    "city":"",
-                    "location":"",
-                    "phoneNumber":"",
-                    "propertyType":"Apartment",
-                    "propertyCategory":"",
-                    "price":"GHC19,000",
-                    "currency":"",
-                    "rooms":"",
-                    "livingArea":"",
-                    "image":"https://meqasa.com/uploads/imgs/cf150e717db9fd79a3960918208f5ab9?dim=400x220",
-                    "imageThumbnail":"",
-                    "available":"",
-                    "build":"",
-                    "carSpace":"",
-                    "agentCommission":""
-                },
+                listing:[
+                           {
+                         name:"Eben",
+                         email:"test4@berkowitz.org",
+                         title:"Mansion for Sale in Dodowa, Greater Accra",
+                         propertyType:' House',
+                         subcategory:"Rooms",
+                         streetaddress:"",
+                         region:'Dodowa',
+                         city:'Greater Accra',
+                         baths:"4",
+                         beds:"5",
+                         rooms:"5",
+                         livingarea:"200",
+                         landarea:"100",
+                         availableOn:"2017-06-05",
+                         floor:"1",
+                         build:"2010",
+                         carspace:"",
+                         shortlet:"",
+                         description:"The mansion comes with spacious living room with open kitchen and dining area, plus a mini bar within the kitchen. The home has huge bedrooms with en suites and walk-in closets.",
+
+                         image:"http://ghanahomesforsale.com/wp-content/uploads/2015/10/mansion-house-in-accra-dodowa-front.png",
+                         image_thumbnails1:"http://ghanahomesforsale.com/wp-content/uploads/2015/10/mansion-house-in-accra-dodowa-front-2.png",
+                         image_thumbnails2:"http://ghanahomesforsale.com/wp-content/uploads/2015/10/mansion-house-in-accra-dodowa.png",
+                         image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/08/dodowa-accra-ghana-mansion-for-sale-17-870x350.png",
+                         image_thumbnails4:"",
+
+                         price:"GHC 600,000",
+                         currency:"GHC",
+                         priceAvailability:"No",
+                         depositBond:"",
+                         agentCommission:"",
+                         pricingConditions:"Negotiable",
+                         listedOn:["tonaton", "meqasa", "lamudi"],
+
+                         },
+
+
+                         {
+
+                         name:"Andrew", email:"test4@berkowitz.org",
+                         title:"5 Bedroom House to Rent In Dansoman",
+                         propertyType:' House',
+                         subcategory:"Rooms",
+                         streetaddress:"",
+                         region:'Dansoman',
+                         city:'Accra',
+                         baths:"4",
+                         beds:"4",
+                         rooms:"5",
+                         livingarea:"200",
+                         landarea:"100",
+                         availableOn:"2017-06-05",
+                         floor:"1",
+                         build:"2010",
+                         carspace:"",
+                         shortlet:"",
+                         description:"5 bedrooms, 5 bathrooms ensuite a safe and peaceful location in Accra, Ghana. Story building in South Dansoman with extra reservoir water tank. Spacious living room, garden, Reasonable parking space and beautifully tiled.",
+
+                         image:"http://ghanahomesforsale.com/wp-content/uploads/2015/03/house-in-tema-ghana-front1-870x450.png",
+                         image_thumbnails1:"http://ghanahomesforsale.com/wp-content/uploads/2015/12/121-870x350.jpg",
+                         image_thumbnails2:"http://ghanahomesforsale.com/wp-content/uploads/2015/12/131-784x350.jpg",
+                         image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/12/141-870x350.jpg",
+                         image_thumbnails4:"",
+
+                         price:"GHC 119,000",
+                         currency:"GHC",
+                         priceAvailability:"No",
+                         depositBond:"",
+                         agentCommission:"",
+                         pricingConditions:"Negotiable",
+                         listedOn:["lamudi", "meqasa", "olx"],
+
+
+                         },
+                         {
+                         name:"Andrew",
+                         email:"test4@berkowitz.org",
+                         title:"Two Storey building for rent",
+                         propertyType:' House',
+                         subcategory:"Rooms",
+                         streetaddress:"",
+                         region:'Adjiringanor',
+                         city:'Accra',
+                         baths:"5",
+                         beds:"5",
+                         rooms:"5",
+                         livingarea:"200",
+                         landarea:"100",
+                         availableOn:"2017-06-05",
+                         floor:"1",
+                         build:"2010",
+                         carspace:"",
+                         shortlet:"",
+                         description:"Built in 2014, this  unique  home has an amazing entry and grand foyer that sets the stage for this two-story home in Adjiringanor around East Legon and about 20 minutes drive from the airport.",
+
+                         image:"http://ghanahomesforsale.com/wp-content/uploads/2015/11/house-in-Agiringanor-accra-for-sale-front-view.jpg",
+                         image_thumbnails1:"http://ghanahomesforsale.com/wp-content/uploads/2015/11/house-in-Agiringanor-accra-for-sale-front-view-80x80.jpg",
+                         image_thumbnails2:"http://ghanahomesforsale.com/wp-content/uploads/2015/11/house-in-Agiringanor-accra-for-sale.jpg",
+                         image_thumbnails3:"",
+                         image_thumbnails4:"",
+
+                         price:"GHC 15,000",
+                         currency:"GHC",
+                         priceAvailability:"No",
+                         depositBond:"",
+                         agentCommission:"",
+                         pricingConditions:"Negotiable",
+                         listedOn:["tonaton", "meqasa", "olx"],
+
+
+                         },
+                         {
+                         name:"Andrew",
+                         email:"test4@berkowitz.org",
+                         title:"4 Bedroom Home at Tema, Community 18",
+                         propertyType:' House',
+                         subcategory:"Rooms",
+                         streetaddress:"",
+                         region:'Kumasi',
+                         city:'Kumasi',
+                         baths:"4",
+                         beds:"2",
+                         rooms:"5",
+                         livingarea:"250",
+                         landarea:"150",
+                         availableOn:"2017-06-05",
+                         floor:"1",
+                         build:"2010",
+                         carspace:"",
+                         shortlet:"",
+                         description:"Completed with remote control garage, poly tank, 2 water pumps, power plant, and AC. ll bedrooms are en suite, Tiled floor outside, landscaping, security post, security fence. Ready to move in. All rooms are very spacious.",
+
+                         image:"http://ghanahomesforsale.com/wp-content/uploads/2015/03/house-for-sale-in-tema-back-view-870x350.png",
+                         image_thumbnails1:"http://ghanahomesforsale.com/wp-content/uploads/2015/03/house-for-sale-in-tema-swimming-pool-mango-tree-870x350.png",
+                         image_thumbnails2:"http://ghanahomesforsale.com/wp-content/uploads/2015/03/house-for-sale-in-tema-stairway-870x350.png",
+                         image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/03/house-for-sale-in-tema-pool-view-870x350.png",
+                         image_thumbnails4:"",
+
+                         price:"GHC 290,000",
+                         currency:"GHC",
+                         priceAvailability:"No",
+                         depositBond:"",
+                         agentCommission:"",
+                         pricingConditions:"Negotiable",
+                         listedOn:["tonaton", "olx"],
+
+
+                         },
+                         {name:"Andrew",
+                         email:"test4@berkowitz.org",
+                         title:"6 bedroom House in Trasssaco",
+                         propertyType:' House',
+                         subcategory:"Rooms",
+                         streetaddress:"",
+                         region:'East Legon',
+                         city:'Accra',
+                         baths:"6",
+                         beds:"6",
+                         rooms:"5",
+                         livingarea:"200",
+                         landarea:"100",
+                         availableOn:"2017-06-05",
+                         floor:"1",
+                         build:"2010",
+                         carspace:"",
+                         shortlet:"",
+                         description:"A four bedroom house at Trasssaco Phase 3 going up for sale. its has an outer house 2 bedroom, main garage, two additional garage,spacious parking space,all rooms comes with air conditions,compound are tiled with modern and durable tiles ,security wall wire and swimming pool.",
+
+                         image:"http://ghanahomesforsale.com/wp-content/uploads/2015/05/IMG-20150426-WA0006-870x350.jpg",
+                         image_thumbnails1:"http://ghanahomesforsale.com/wp-content/uploads/2015/05/AIRCONDITION-2-581x350.jpg",
+                         image_thumbnails2:"http://ghanahomesforsale.com/wp-content/uploads/2015/05/HALL-4-581x350.jpg",
+                         image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/05/flowers-5-870x350.jpg",
+                         image_thumbnails4:"",
+
+                         price:"GHC 519,000",
+                         currency:"GHC",
+                         priceAvailability:"No",
+                         depositBond:"",
+                         agentCommission:"",
+                         pricingConditions:"Negotiable",
+                         listedOn:["tonaton", "meqasa","lamudi", "olx"],
+
+
+                         }
+                          ],
                 user:[
                         {
                             "name":"emma",
@@ -42,6 +205,18 @@ export default {
                 ]
         }
   },
+  methods:{
+            updateListing(){
+
+                     this.$listingModel.push(listing);
+            }
+  },
+  computed: {
+    getRandomlisting(){
+        return Math.floor(Math.random() * (2 - 4)) + 2;
+    }
+  },
+
   components: {
     // TodaySaleChart,
     Statuses,
@@ -51,6 +226,8 @@ export default {
 </script>
 
 <style>
+
+
         .listing-title{
             background-color: white !important;
             padding: 5px 10px 10px 20px !important;
@@ -108,9 +285,16 @@ export default {
         .row-listing{
             padding-left: 15px;
         }
-
-        .listing-content{
+        .row < .content-listing{
+            padding: 0px !important;
+        }
+       .content-listing{
             background-color: white;
+            margin-right: 15px !important;
+            margin-left: 15px !important;
+            padding: 0px;
+       }
+        .listing-content{
             padding-left: 10px;
             display: inline-block;
         }
