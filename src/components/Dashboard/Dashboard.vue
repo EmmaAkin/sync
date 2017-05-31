@@ -4,6 +4,7 @@
 // import TodaySaleChart from './TodaySaleChart/TodaySaleChart.vue'
 import Statuses from './Statuses/Statuses.vue'
 import CircleChart from './CircleChart/CircleChart.vue'
+import _ from 'lodash'
 
 export default {
   name: 'Dashboard',

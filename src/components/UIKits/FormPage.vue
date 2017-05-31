@@ -9,6 +9,8 @@
                           <form-wizard @on-complete="onComplete"
                                   color="gray"
                                   error-color="#a94442"
+                                  :model="model"
+
                                   >
                                 <tab-content title="Basic Information" icon="ti-user" :before-change="validateFirstTab">
                                               <div class="row">
@@ -51,7 +53,7 @@
                                               <div class="col-md-8">
                                                       <div v-if="!model.image" :model="model.image">
                                                             <h2>Select an image</h2>
-                                                            <input type="file" @change="onFileChange">
+                                                            <input type="file" @change="onFileChange" accept="image/*" />
                                                             <div class="img-attachment">
                                                                     <img src=""/>
                                                             </div>
@@ -94,6 +96,8 @@
 <script>
 import VueFormGenerator from "vue-form-generator"
 import Multiselect from 'vue-multiselect'
+import _ from 'lodash'
+
 
 window.vueMultiSelect = Multiselect
 
@@ -101,41 +105,15 @@ window.vueMultiSelect = Multiselect
     name: 'FormPage',
     data() {
             return {
-                          //TODO make this selection compatible with Lamudi selection
-                          subcategories: [
-                          {
-                            "name": "Apartment",
-                            "subcategories": [
-                                                          {
-                                                           "name": "Uncompleted"
-                                                           },
-                                                           {
-                                                            "name" :"Rooms"
-                                                           },
-                                                           {
-                                                            "name":"Apartment"
-                                                           },
-                                                           {
-                                                            "name":"Duplex apartment"
-                                                           },
-                                                           {
-                                                            "name":"Attic apartment"
-                                                           },
-                                                           {
-                                                            "name":"Loft"
-                                                           },
-                                                           {
-                                                            "name":"Penthouse"
-                                                           },
-                                                           {
-                                                            "name":"Special property"
-                                                           },
-                                                           {
-                                                            "name":"Other"
-                                                           }
-                             ]
-                          }
-                          ],
+                          //Handling images
+                          cloudinary:{
+                            uploadPreset: ",
+                            apiKey: "",
+                            cloudName:""
+
+                          },
+
+
                           model:{
                           name:"Andrew",
                           email:"test4@berkowitz.org",
@@ -224,6 +202,7 @@ window.vueMultiSelect = Multiselect
                                            },
                                                 {
                                               type: "select",
+                                              inputType: "text",
                                               multiSelect: false,
                                               placeholder: "Select your Category",
                                               label: "Subcategory",
@@ -278,8 +257,9 @@ window.vueMultiSelect = Multiselect
                                             validator:VueFormGenerator.validators.string,
                                             styleClasses:'col-xs-6'
                                          },
-                                                {
+                                        {
                                               type: "select",
+                                               inputType: "text",
                                               multiSelect: false,
                                               placeholder: "Select your Region",
                                               label: "Region",
@@ -371,47 +351,47 @@ window.vueMultiSelect = Multiselect
                                      fields:[
                                                {
                                                   type: "input",
-                                                  inputType: "text",
+                                                   inputType: "number",
                                                   label: "Baths",
                                                   model: "baths",
                                                   required:true,
-                                                  validator:VueFormGenerator.validators.string,
+                                                  validator:VueFormGenerator.validators.integer,
                                                   styleClasses:'col-xs-4'
                                                },
                                               {
                                                 type: "input",
-                                                inputType: "text",
+                                                inputType: "number",
                                                 label: "Bed",
                                                 model: "beds",
                                                 required:true,
-                                                validator:VueFormGenerator.validators.string,
+                                                validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-4'
                                               },
                                               {
                                                 type: "input",
-                                                inputType: "text",
+                                                inputType: "number",
                                                 label: "Bedrooms",
                                                 model: "bedrooms",
                                                 required:true,
-                                                validator:VueFormGenerator.validators.string,
+                                                validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-4'
                                               },
                                               {
                                                 type: "input",
-                                                inputType:"text",
+                                                inputType: "number",
                                                 label: "Living area (square meters)",
                                                 model: "livingarea",
                                                 required:true,
-                                                validator:VueFormGenerator.validators.string,
+                                                validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-6'
                                               },
                                               {
                                                 type: "input",
-                                                inputType:"text",
+                                                inputType: "number",
                                                 label: "Land Area (square meters)",
                                                 model: "landarea",
                                                 required:true,
-                                                validator:VueFormGenerator.validators.string,
+                                                validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-6'
                                               },
                                                {
@@ -459,11 +439,11 @@ window.vueMultiSelect = Multiselect
                                      fields:[
                                                {
                                                   type: "input",
-                                                  inputType: "text",
+                                                  inputType: "number",
                                                   label: "Price",
                                                   model: "price",
                                                   required:true,
-                                                  validator:VueFormGenerator.validators.string,
+                                                  validator:VueFormGenerator.validators.integer,
                                                   styleClasses:'col-xs-4'
                                                },
                                               {
@@ -487,22 +467,25 @@ window.vueMultiSelect = Multiselect
                                               },
                                               {
                                                 type: "input",
+                                                inputType: "number",
                                                 label: "Deposit Bond",
                                                 model: "depositBond",
                                                 required:false,
-                                                validator:VueFormGenerator.validators.string,
+                                                validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-4'
                                               },
                                               {
                                                 type: "input",
+                                                 inputType: "number",
                                                 label: "Agent Commission",
                                                 model: "agentCommission",
                                                 required:false,
-                                                validator:VueFormGenerator.validators.string,
+                                                validator:VueFormGenerator.validators.integer,
                                                 styleClasses:'col-xs-4'
                                               },
                                               {
                                                 type: "input",
+                                                 inputType: "text",
                                                 label: "Pricing Conditions",
                                                 model: "pricingConditions",
                                                 required:false,
@@ -514,9 +497,19 @@ window.vueMultiSelect = Multiselect
                     }
           },
  methods: {
-  onComplete: function(){
-      alert('Yay. Done!');
-   },
+      onComplete: function(){
+              this.makeApiCall(this.model);
+              alert('Yay. Done!',this.model);
+       },
+       //Prepare the API call
+       makeApiCall(model){
+              this.$api.makeCall(model, this.axiosCallBack);
+       },
+       axiosCallBack(callResponse){
+              console.log(callResponse);
+       },
+
+
    validateFirstTab: function(){
      return this.$refs.firstTabForm.validate();
    },
@@ -572,6 +565,10 @@ window.vueMultiSelect = Multiselect
    },
    computed: {
 
+        clUrl: function(){
+            return `https://api.cloudinary.com/v1_1/${this.cloudinary.cloudName}/upload`;
+        },
+
    },
 
    components:{
@@ -603,7 +600,7 @@ display: none;
 }
   .img-attachment img{
       max-width: 100%;
-      max-height: auto;
+      max-height: 100%;
   }
 
 </style>

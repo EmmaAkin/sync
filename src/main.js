@@ -9,12 +9,21 @@ import VueFormWizard from 'vue-form-wizard'
 import VueFormGenerator from "vue-form-generator/dist/vfg-core.js"
 import Multiselect from 'vue-multiselect'
 
+//Making API request to the server
+
+import Api from './lib/api.js'
+
 import Card from 'src/components/Elements/Card/Card.vue'
 import TabSet from 'src/components/Elements/TabSet.vue'
 import TabItem from 'src/components/Elements/TabItem.vue'
 import Modal from 'src/components/Elements/Modal/Modal.vue'
 import DataTable from 'src/components/Elements/DataTable/DataTable.vue'
 import Select2 from 'src/components/Elements/Select2.vue'
+
+
+//You can call this.
+
+Vue.prototype.$api = Api;
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
@@ -38,6 +47,7 @@ require('jquery')
 import hljs from 'highlightjs'
 hljs.initHighlightingOnLoad()
 
+Vue.prototype.listingModel = {};
 /* eslint-disable no-new */
 const router = new VueRouter({
   mode: 'history',
