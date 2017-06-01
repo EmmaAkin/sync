@@ -84,6 +84,7 @@
 
                                 <tab-content title="Last step" icon="ti-check">
                                         <h4>This is the preview of your listing!</h4>
+                                        <!--//TODO::: Andrew make the necessary styling on the page -->
                                         <div class="row">
                                         <div class="col-md-3">
                                                 <div class="img-preview">
@@ -505,22 +506,23 @@ window.vueMultiSelect = Multiselect
                                                 validator:VueFormGenerator.validators.string,
                                                 styleClasses:'col-xs-4'
                                               }
-                                              ]
+                                            ]
                           }
                     }
           },
  methods: {
-      onComplete: function(){
-              this.makeApiCall(this.model);
-              alert('Yay. Done!',this.model);
-       },
-       //Prepare the API call
-       makeApiCall(model){
-              this.$api.makeCall(model, this.axiosCallBack);
-       },
-       axiosCallBack(callResponse){
-              console.log(callResponse);
-       },
+	onComplete: function(){
+		this.makeApiCall(this.model);
+		//Todo the launch of the completion of the form
+		alert('Yay. Done!',this.model);
+	},
+		//Prepare the API call
+	makeApiCall(model){
+		this.$api.makeCall(model, this.axiosCallBack);
+	},
+	axiosCallBack(callResponse){
+		console.log(callResponse);
+	},
 
 
    validateFirstTab: function(){

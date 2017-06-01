@@ -1,6 +1,6 @@
 <aside class="app-sidebar" id="sidebar">
   <div class="sidebar-header">
-    <a class="sidebar-brand" href="#"><span class="highlight">Mira</span> Sync</a>
+    <a class="sidebar-brand" href="#"><img src="~src/assets/images/logos/mirasynclogo.png"/></a>
     <button type="button" class="sidebar-toggle">
       <i class="fa fa-times"></i>
     </button>
@@ -15,15 +15,8 @@
           <div class="title">Dashboard</div>
         </router-link>
       </li>
-      <li class="messaging">
-        <router-link to="/messaging">
-          <div class="icon">
-            <i class="fa fa-comments" aria-hidden="true"></i>
-          </div>
-          <div class="title">Messaging</div>
-        </router-link>
-      </li>
-      <li>
+
+        <li>
               <router-link to="/form">
                       <div class="icon ">
                             <i class="fa fa-home" aria-hidden="true"></i>
@@ -31,12 +24,22 @@
                       <div class="title">Add</div>
               </router-link>
       </li>
-            <li>
-              <router-link to="/login">Login</router-link>
-            </li>
-            <li>
-              <router-link to="/register">Register</router-link>
-            </li>
+
+      <li class="messaging">
+        <router-link to="/messaging">
+          <div class="icon">
+            <i class="fa fa-money" aria-hidden="true"></i>
+          </div>
+          <div class="title">Budgeting</div>
+        </router-link>
+      </li>
+
+      <li>
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li>
+        <router-link to="/register">Register</router-link>
+      </li>
             <!-- <li><a href="@@path/pages/404.html">404</a></li> -->
           </ul>
         </div>

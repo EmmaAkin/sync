@@ -273,7 +273,6 @@ export default {
         }
 
         .listing-title{
-            background-color: white !important;
             padding: 5px 10px 10px 20px !important;
             margin-bottom: 0px !important;
             border-bottom: 1px solid #f2f2f2 !important;
@@ -286,10 +285,14 @@ export default {
             max-width:100%;
             max-height: 100%;
             padding: 0px !important;
+        }
+        .listing-img{
+
             border-top-right-radius: 10px;
             border-top-left-radius: 10px;
 
         }
+
         img.icon{
             width: 50px !important;
         }
