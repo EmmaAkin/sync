@@ -76,7 +76,7 @@ Vue.prototype.$listingModel =[
                          image_thumbnails3:"",
                          image_thumbnails4:"",
 
-                         price:"GHC 15,000",
+                         price:"15,000",
                          currency:"GHC",
                          priceAvailability:"No",
                          depositBond:"",
@@ -115,7 +115,7 @@ Vue.prototype.$listingModel =[
                          image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/03/house-for-sale-in-tema-pool-view-870x350.png",
                          image_thumbnails4:"",
 
-                         price:"GHC 290,000",
+                         price:"290,000",
                          currency:"GHC",
                          priceAvailability:"No",
                          depositBond:"",
@@ -153,7 +153,7 @@ Vue.prototype.$listingModel =[
                          image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/05/flowers-5-870x350.jpg",
                          image_thumbnails4:"",
 
-                         price:"GHC 519,000",
+                         price:"519,000",
                          currency:"GHC",
                          priceAvailability:"No",
                          depositBond:"",
@@ -192,7 +192,7 @@ Vue.prototype.$listingModel =[
                          image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/08/dodowa-accra-ghana-mansion-for-sale-17-870x350.png",
                          image_thumbnails4:"",
 
-                         price:"GHC 600,000",
+                         price:"600,000",
                          currency:"GHC",
                          priceAvailability:"No",
                          depositBond:"",
@@ -232,7 +232,7 @@ Vue.prototype.$listingModel =[
                          image_thumbnails3:"http://ghanahomesforsale.com/wp-content/uploads/2015/12/141-870x350.jpg",
                          image_thumbnails4:"",
 
-                         price:"GHC 119,000",
+                         price:"119,000",
                          currency:"GHC",
                          priceAvailability:"No",
                          depositBond:"",

@@ -513,11 +513,13 @@ window.vueMultiSelect = Multiselect
  methods: {
 	onComplete: function(){
     //Todo the launch of the completion of the form
-            this.$listingModel.push(this.model);
+            this.$listingModel.unshift(this.model);
 
           console.log("This is the update", this.$listingModel[0]);
 
 		this.makeApiCall(this.model);
+
+          this.$router.push({ path: 'dashboard' })
 
 	},
 		//Prepare the API call

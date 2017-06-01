@@ -1,5 +1,3 @@
-
-
  <div class="row row-listing" >
 	<div v-for = "list in listing" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 content-listing">
 		<div class="image center-block">
@@ -8,7 +6,7 @@
 		<div class="listing-content">
 			<div class="title"><h4><a href="#">{{list.title}}</a></h4></div>
 			<div class="details-info">
-				<span class="listing-details-price"><strong>{{list.price}}</strong></span>
+				<span class="listing-details-price"><strong>{{list.currency}} {{list.price}}</strong></span>
 				<ul class="detail-features">
 				<li class="bed-feature">
 					{{list.beds}} <i class="fa fa-bed" aria-hidden="true"></i>
