@@ -512,9 +512,13 @@ window.vueMultiSelect = Multiselect
           },
  methods: {
 	onComplete: function(){
+    //Todo the launch of the completion of the form
+            this.$listingModel.push(this.model);
+
+          console.log("This is the update", this.$listingModel[0]);
+
 		this.makeApiCall(this.model);
-		//Todo the launch of the completion of the form
-		alert('Yay. Done!',this.model);
+
 	},
 		//Prepare the API call
 	makeApiCall(model){
@@ -627,5 +631,11 @@ display: none;
     max-width: 100%;
 
 }
-
+.vue-form-wizard .wizard-navigation .progress-with-circle{
+  top:20px !important;
+}
+.vue-form-wizard .icon-circle{
+  width: 30px !important;
+  height:30px !important;
+}
 </style>

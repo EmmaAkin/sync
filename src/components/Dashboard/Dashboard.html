@@ -1,21 +1,36 @@
+
+
  <div class="row row-listing" >
 	<div v-for = "list in listing" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 content-listing">
 		<div class="image center-block">
 		     	<img class="listing-img" v-bind:src="list.image">
 		</div>
 		<div class="listing-content">
-			<div class="description-excerpt">{{list.description}}</div>
+			<div class="title"><h4><a href="#">{{list.title}}</a></h4></div>
+			<div class="details-info">
+				<span class="listing-details-price"><strong>{{list.price}}</strong></span>
+				<ul class="detail-features">
+				<li class="bed-feature">
+					{{list.beds}} <i class="fa fa-bed" aria-hidden="true"></i>
+				</li>
+				<li class="bath-feature">
+					{{list.baths}} <i class="fa fa-shower" aria-hidden="true"></i>
+				</li>
 
-			<div class="listing-details-price"><strong>{{list.price}}</strong></div>
-			<hr>
+				</ul>
+
+			</div>
+
 			<div class="listed-on">
-			     <img class="icon lamudi"  src="~src/assets/images/logos/lamudi_logo.fw.png"/>
-			     <img class="icon meqasa" src="~src/assets/images/logos/meqasa.fw.png">
-			     <img class="icon olx" src="~src/assets/images/logos/olx.fw.png">
-			     <img class="icon tonaton" src="~src/assets/images/logos/tonaton.fw.png">
-			</div class="listed-rating">
+				<div class="listed-logo">
+				     <img class="icon lamudi"  src="~src/assets/images/logos/lamudi_logo.fw.png"/>
+				     <img class="icon meqasa" src="~src/assets/images/logos/meqasa.fw.png">
+				     <img class="icon olx" src="~src/assets/images/logos/olx.fw.png">
+				     <img class="icon tonaton" src="~src/assets/images/logos/tonaton.fw.png">
+				</div>
 
-			<div> <strong>Listed:</strong> {{getRandomlisting}}/4</div>
+				<div  class="listed-rating"> <strong>Listed:</strong> {{getRandomlisting}}/4</div>
+			</div>
 		</div>
 
 	</div>
