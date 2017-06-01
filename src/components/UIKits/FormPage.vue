@@ -42,8 +42,10 @@
                                                     </vue-form-generator>
                                             </div>
                                             <div class="col-md-4">
-
-                                            </div>
+                                                          <h4>Tips</h4>
+                                                          <p>Add the necessary features of your property.</p><br><strong><u>Important</u> : users would want to know more about your different features</strong><br><br>
+                                                          <p>Take time to enter the necessary features</p>
+                                                </div>
                                       </div>
 
 

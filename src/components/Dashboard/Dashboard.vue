@@ -213,7 +213,27 @@ export default {
   },
   computed: {
     getRandomlisting(){
-        return Math.floor(Math.random() * (2 - 4)) + 2;
+        let randomNum =  Math.floor(Math.random() *  4)
+        if (randomNum < 3 && this.randomNum > 1) {
+            console.log(randomNum);
+            return randomNum + 1;
+        }
+        else if (randomNum < 0){
+            console.log("THis is the else if", randomNum);
+            return randomNum + 2;
+        }
+        else {
+            return 2;
+        }
+    },
+    getListedOnStatus(){
+        let randomNum =  Math.floor(Math.random() *  1)
+        if (randomNum == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
   },
 
@@ -226,7 +246,31 @@ export default {
 </script>
 
 <style>
+        .navbar{
+            height: 64px !important;
 
+
+        }
+        .navbar-collapse.collapse.in{
+            height: 64px !important;
+        }
+        .navbar.navbar-collapse.navbar-nav{
+            height: 64px !important;
+        }
+        .nav.navbar-nav.navbar-left, .nav.navbar-nav.navbar-right {
+            height: 64px !important;
+        }
+        .navbar.navbar-collapse{
+            background-color: #120F2A !important;
+        }
+
+        .aside.app-sidebar.sidebar-footer{
+            background-color: #f5c243 !important;
+        }
+
+        .navbar-collapse.collapse.in, .sidebar-menu{
+            background-color: #120F2A !important;
+        }
 
         .listing-title{
             background-color: white !important;
@@ -242,6 +286,9 @@ export default {
             max-width:100%;
             max-height: 100%;
             padding: 0px !important;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+
         }
         img.icon{
             width: 50px !important;
@@ -255,7 +302,6 @@ export default {
         .card-body < .listing-logo{
             min-height: 70px;
         }
-
 
         .card.card-banner .card-body .content{
             padding: 0rem !important;
@@ -292,7 +338,10 @@ export default {
             background-color: white;
             margin-right: 15px !important;
             margin-left: 15px !important;
-            padding: 0px;
+            padding: 0px 0px 10px 0px !important;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+
        }
         .listing-content{
             padding-left: 10px;
@@ -322,29 +371,6 @@ export default {
         .listed-rating{
 
         }
-        /*.listing-details-price{
-            box-sizing: border-box;
-            width: 48.57143%;
-            float: left;
-            margin: 0 2.85714% 0 0;
-            display: inline-block;
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            color: #333;
-            font-weight: 600;
-            font-size: 14px;
-        }*/
 
-        /*.listing-details-features{
-            box-sizing: border-box;
-            width: 48.57143%;
-            float: right;
-            margin-right: 0;
-            text-align: right
-        }*/
-
-        /*@1440X900*/
 
 </style>
