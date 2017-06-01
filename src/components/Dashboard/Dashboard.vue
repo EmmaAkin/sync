@@ -275,7 +275,9 @@ methods:{
     .fa-bed, .fa-shower{
             color:#F3C241;
     }
-
+    aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .title{
+        color:#fff;
+    }
     /*Retina scrren*/
     @media screen
         and (min-device-width: 1200px)
