@@ -97,8 +97,8 @@
                                         <h4><strong>This is the preview of your listing!</strong></h4>
                                         <!--//TODO::: Andrew make the necessary styling on the page -->
                                     <div class="row">
-                                        <div class="col-md-5">
-                                            <h4><img src="/static/img/lamudi_logo.fw.d3d7860.png" class="icon img-listing-logo"> Lamudi Preview </h4>
+                                        <div class="col-md-12">
+                                            <h4 class="preview-logo"><img src="/static/img/lamudi_logo.fw.d3d7860.png" class="icon img-listing-logo"> Lamudi Preview </h4>
                                               <div class="catalog-wrapper"> <!-- catlogue -->
                                                  <ul style="hidden = true"class="properties-list" id="pnlPropertiesListPanel">
                                                     <li class="highlight-box">
@@ -153,30 +153,13 @@
                                                             </ul>
                                                        </div> <!-- END of Wrapper -->
                                                     </li>
-                                                 </ul>
-                                              </div> <!-- END Catalogue -->
-<<<<<<< HEAD
-                                              <div><span> <br/> </span> </div>
+                                              </ul>
+                                      </div> <!-- END Catalogue -->
+                                  </div>
+                                  <div class="col-md-12">
                                               <!-- JUMIA HSE -->
-                                              <h4> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
-=======
+                                              <h4 class="preview-logo"> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
 
-                                              <!--  <div class="img-preview">
-                                                  <img :src="model.image"/>
-                                                </div>
-                                              <h4 class="title-preview">{{model.title}}</h4>
-                                              <p class="short-description-preview"><i class="fa fa-map-marker" aria-hidden="true"></i> {{model.streetaddress}}, {{model.region.name}}, {{model.city.name}}</p>
-                                              <span class="price-preview"><strong>GHC {{model.price}}</strong></span></br>
-                                              <span class="beds-preview">{{model.beds}} Bedrooms</span>
-                                              <span class="baths-preview">{{model.baths}} Baths</span>
-                                              <span class="rooms-preview">{{model.rooms}} Rooms</span>
-                                              <div class="listing-platform">Lamudi</div> -->
-
-                                        </div>
-                                        <div class="col-md-2"> <span>  </span> </div>
-                                      <div class="col-md-5">
-                                          <h4> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
->>>>>>> 994c494c215cae486e5a2a19b4d601578c74488f
                                             <div class="ui-item">
                                                 <div class="item-thumb has-frames">
                                                      <a href="#">
@@ -202,13 +185,9 @@
                                                     </p>
 
                                                 </div> <!-- Item -->
-                                                
+
                                             </div> <!-- UI Item -->
                                         </div>
-                                        <div class="col-md-2"> <span>  </span> </div>
-                                      <div class="col-md-5">
-                                          
-                                      </div> <!-- col-md-5 -->
                                     </div>
                                 </tab-content>
                           </form-wizard>
@@ -1401,5 +1380,16 @@ ui-item .item-info {
   width: 30px !important;
   height:30px !important;
 
+}
+.listing-actions-inner{
+    border:none !important;
+}
+
+#pnlPropertiesListPanel, .highlight-box{
+    padding-left: 0px !important;
+}
+.preview-log{
+    background-color: grey !important;
+    color: white !important;
 }
 </style>
