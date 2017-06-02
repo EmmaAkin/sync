@@ -65,25 +65,36 @@
                                                             <button @click="removeImage">Remove image</button>
                                                       </div>
                                               </div>
-                                        </div>
+
+                                            <div class="col-md-4">
+                                                          <h4>Tips</h4>
+                                                          <p>Use clear pictures that depict the different features of your property.</p>
+                                            </div>
+                                      </div>
                                 </tab-content>
 
                                   <tab-content title="Price"  icon="ti-settings" :before-change="validateFourthTab">
                                       <div class="row">
-                                              <div class="col-md-8">
-                                                    <vue-form-generator :model="model"
-                                                            :schema="fourthTabSchema"
-                                                            :options="formOptions"
-                                                            ref="fourthTabForm"
-                                                    >
-                                                    </vue-form-generator>
-                                              </div>
+                                                  <div class="col-md-8">
+                                                        <vue-form-generator :model="model"
+                                                                :schema="fourthTabSchema"
+                                                                :options="formOptions"
+                                                                ref="fourthTabForm"
+                                                        >
+                                                        </vue-form-generator>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                                  <h4>Tips</h4>
+                                                                  <p>Please enter the price in  Cedis.</p>
+                                                                  <p>What's the pricing of your property?</p>
+                                                                  <p>Are there any additional costs or commissions?</p>
+                                                   </div>
                                       </div>
                                 </tab-content>
 
 
                                 <tab-content title="Last step" icon="ti-check">
-                                        <h4>This is the preview of your listing!</h4>
+                                        <h4><strong>This is the preview of your listing!</strong></h4>
                                         <!--//TODO::: Andrew make the necessary styling on the page -->
                                     <div class="row">
                                         <div class="col-md-5">
@@ -101,7 +112,7 @@
                                                                                <p class="listing-address icon-location"> {{model.address}}, {{model.region.name}}, {{model.city.name}} </p>
                                                                                   <span class="listing-price">GH₵ {{model.price}} </span>
                                                                                   <ul class="listing-attributes has-agent">
-                                                                                   <li> 
+                                                                                   <li>
                                                                                       <span class="listing-attributes-value">{{ model.beds }} <span class="listing-attributes-title">Bedrooms</span>
                                                                                       </span>
                                                                                     </li>
@@ -143,8 +154,8 @@
                                                        </div> <!-- END of Wrapper -->
                                                     </li>
                                                  </ul>
-                                              </div> <!-- END Catalogue --> 
-                                              
+                                              </div> <!-- END Catalogue -->
+
                                               <!--  <div class="img-preview">
                                                   <img :src="model.image"/>
                                                 </div>
@@ -707,7 +718,7 @@ display: none;
 .img-attachment{
     background-size:cover;
     background-position: center;
-    height: 250px; width: 250px;
+    height: 150px; width: 250px;
     border: 1px solid #bbb;
 }
   .img-attachment img{
