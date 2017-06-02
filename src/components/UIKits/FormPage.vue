@@ -98,7 +98,7 @@
                                                                         <div class="listing-info-container">
                                                                             <div class="listing-info">
                                                                                <h3> <a class="main-link"> {{model.title}} </a> </h3>
-                                                                               <p class="listing-address icon-location"> {{model.address}}, {{model.region.name}}, {{model.city.name}} </p>
+                                                                               <p class="listing-address icon-location"> {{model.address}} {{model.region.name}}, {{model.city.name}} </p>
                                                                                   <span class="listing-price">GH₵ {{model.price}} </span>
                                                                                   <ul class="listing-attributes has-agent">
                                                                                    <li> 
@@ -117,7 +117,7 @@
                                                                                   <div class="listing-actions">
                                                                                       <div class="listing-actions-inner">
                                                                                         <a>
-                                                                                          <button class="more inverse">More Details</button>
+                                                                                          <button class="more inverse" style="color: white">More Details</button>
                                                                                         </a>
                                                                                       </div> <!-- la-inner -->
                                                                                       <div class="cta-buttons">
@@ -143,23 +143,10 @@
                                                        </div> <!-- END of Wrapper -->
                                                     </li>
                                                  </ul>
-                                              </div> <!-- END Catalogue --> 
-                                              
-                                              <!--  <div class="img-preview">
-                                                  <img :src="model.image"/>
-                                                </div>
-                                              <h4 class="title-preview">{{model.title}}</h4>
-                                              <p class="short-description-preview"><i class="fa fa-map-marker" aria-hidden="true"></i> {{model.streetaddress}}, {{model.region.name}}, {{model.city.name}}</p>
-                                              <span class="price-preview"><strong>GHC {{model.price}}</strong></span></br>
-                                              <span class="beds-preview">{{model.beds}} Bedrooms</span>
-                                              <span class="baths-preview">{{model.baths}} Baths</span>
-                                              <span class="rooms-preview">{{model.rooms}} Rooms</span>
-                                              <div class="listing-platform">Lamudi</div> -->
-
-                                        </div>
-                                        <div class="col-md-2"> <span>  </span> </div>
-                                      <div class="col-md-5">
-                                          <h4> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
+                                              </div> <!-- END Catalogue -->
+                                              <div><span> <br/> </span> </div>
+                                              <!-- JUMIA HSE -->
+                                              <h4> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
                                             <div class="ui-item">
                                                 <div class="item-thumb has-frames">
                                                      <a href="#">
@@ -185,10 +172,12 @@
                                                     </p>
 
                                                 </div> <!-- Item -->
-                                                <div class="item-extras">
-
-                                                </div>
+                                                
                                             </div> <!-- UI Item -->
+                                        </div>
+                                        <div class="col-md-2"> <span>  </span> </div>
+                                      <div class="col-md-5">
+                                          
                                       </div> <!-- col-md-5 -->
                                     </div>
                                 </tab-content>
