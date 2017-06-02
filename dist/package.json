@@ -1,11 +1,15 @@
 {
- "name": "blog",
- "version": "1.0.0",
- "description": "personalblog",
- "author": "Awesome Author",
- "private": true,
- "scripts": {
-   "postinstall": "npm install express"
- }
-}
-
+  "name": "MiraSync",
+  "description": "MiraSync dashboard",
+  "version": "1.0.0",
+  "author": "Emmanuel Awokoya <akinpense2@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "unit": "karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "postinstall": "npm install express"
+  }

@@ -273,9 +273,9 @@ window.vueMultiSelect = Multiselect
                                          },
                                         {
                                               type: "select",
-                                               inputType: "text",
+                                              inputType: "text",
                                               multiSelect: false,
-                                              placeholder: "Select your Region",
+                                              placeholder: "Greater Accra Region",
                                               label: "Region",
                                               model: "region",
                                               required:true,
@@ -327,7 +327,7 @@ window.vueMultiSelect = Multiselect
                                            }, {
                                               type: "select",
                                               multiSelect: false,
-                                              placeholder: "Select your City",
+                                              placeholder: "Accra",
                                               label: "City",
                                               model: "city",
                                               required:true,
@@ -342,7 +342,7 @@ window.vueMultiSelect = Multiselect
                                               },
                                               values:[
                                                   {
-                                                    "name": "Barekese"
+                                                    "name": "Accra"
                                                   },
                                                   {
                                                     "name": "Breman"
