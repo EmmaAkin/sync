@@ -65,25 +65,36 @@
                                                             <button @click="removeImage">Remove image</button>
                                                       </div>
                                               </div>
-                                        </div>
+
+                                            <div class="col-md-4">
+                                                          <h4>Tips</h4>
+                                                          <p>Use clear pictures that depict the different features of your property.</p>
+                                            </div>
+                                      </div>
                                 </tab-content>
 
                                   <tab-content title="Price"  icon="ti-settings" :before-change="validateFourthTab">
                                       <div class="row">
-                                              <div class="col-md-8">
-                                                    <vue-form-generator :model="model"
-                                                            :schema="fourthTabSchema"
-                                                            :options="formOptions"
-                                                            ref="fourthTabForm"
-                                                    >
-                                                    </vue-form-generator>
-                                              </div>
+                                                  <div class="col-md-8">
+                                                        <vue-form-generator :model="model"
+                                                                :schema="fourthTabSchema"
+                                                                :options="formOptions"
+                                                                ref="fourthTabForm"
+                                                        >
+                                                        </vue-form-generator>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                                  <h4>Tips</h4>
+                                                                  <p>Please enter the price in  Cedis.</p>
+                                                                  <p>What's the pricing of your property?</p>
+                                                                  <p>Are there any additional costs or commissions?</p>
+                                                   </div>
                                       </div>
                                 </tab-content>
 
 
                                 <tab-content title="Last step" icon="ti-check">
-                                        <h4>This is the preview of your listing!</h4>
+                                        <h4><strong>This is the preview of your listing!</strong></h4>
                                         <!--//TODO::: Andrew make the necessary styling on the page -->
                                     <div class="row">
                                         <div class="col-md-5">
@@ -101,7 +112,7 @@
                                                                                <p class="listing-address icon-location"> {{model.address}} {{model.region.name}}, {{model.city.name}} </p>
                                                                                   <span class="listing-price">GH₵ {{model.price}} </span>
                                                                                   <ul class="listing-attributes has-agent">
-                                                                                   <li> 
+                                                                                   <li>
                                                                                       <span class="listing-attributes-value">{{ model.beds }} <span class="listing-attributes-title">Bedrooms</span>
                                                                                       </span>
                                                                                     </li>
@@ -144,9 +155,28 @@
                                                     </li>
                                                  </ul>
                                               </div> <!-- END Catalogue -->
+<<<<<<< HEAD
                                               <div><span> <br/> </span> </div>
                                               <!-- JUMIA HSE -->
                                               <h4> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
+=======
+
+                                              <!--  <div class="img-preview">
+                                                  <img :src="model.image"/>
+                                                </div>
+                                              <h4 class="title-preview">{{model.title}}</h4>
+                                              <p class="short-description-preview"><i class="fa fa-map-marker" aria-hidden="true"></i> {{model.streetaddress}}, {{model.region.name}}, {{model.city.name}}</p>
+                                              <span class="price-preview"><strong>GHC {{model.price}}</strong></span></br>
+                                              <span class="beds-preview">{{model.beds}} Bedrooms</span>
+                                              <span class="baths-preview">{{model.baths}} Baths</span>
+                                              <span class="rooms-preview">{{model.rooms}} Rooms</span>
+                                              <div class="listing-platform">Lamudi</div> -->
+
+                                        </div>
+                                        <div class="col-md-2"> <span>  </span> </div>
+                                      <div class="col-md-5">
+                                          <h4> <img src="/static/img/tonaton.fw.c1a6e21.png" class="icon img-listing-logo"/> TonaTon Preview </h4>
+>>>>>>> 994c494c215cae486e5a2a19b4d601578c74488f
                                             <div class="ui-item">
                                                 <div class="item-thumb has-frames">
                                                      <a href="#">
@@ -353,9 +383,9 @@ window.vueMultiSelect = Multiselect
                                          },
                                         {
                                               type: "select",
-                                               inputType: "text",
+                                              inputType: "text",
                                               multiSelect: false,
-                                              placeholder: "Select your Region",
+                                              placeholder: "Greater Accra Region",
                                               label: "Region",
                                               model: "region",
                                               required:true,
@@ -407,7 +437,7 @@ window.vueMultiSelect = Multiselect
                                            }, {
                                               type: "select",
                                               multiSelect: false,
-                                              placeholder: "Select your City",
+                                              placeholder: "Accra",
                                               label: "City",
                                               model: "city",
                                               required:true,
@@ -422,7 +452,7 @@ window.vueMultiSelect = Multiselect
                                               },
                                               values:[
                                                   {
-                                                    "name": "Barekese"
+                                                    "name": "Accra"
                                                   },
                                                   {
                                                     "name": "Breman"
@@ -696,7 +726,7 @@ display: none;
 .img-attachment{
     background-size:cover;
     background-position: center;
-    height: 250px; width: 250px;
+    height: 150px; width: 250px;
     border: 1px solid #bbb;
 }
   .img-attachment img{
