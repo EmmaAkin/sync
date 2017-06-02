@@ -19,6 +19,7 @@ import TabItem from 'src/components/Elements/TabItem.vue'
 import Modal from 'src/components/Elements/Modal/Modal.vue'
 import DataTable from 'src/components/Elements/DataTable/DataTable.vue'
 import Select2 from 'src/components/Elements/Select2.vue'
+import Layout from 'src/components/Layout/Layout.vue'
 
 
 //You can call this.
@@ -38,6 +39,7 @@ Vue.component('TabItem', TabItem)
 Vue.component('Modal', Modal)
 Vue.component('DataTable', DataTable)
 Vue.component('Select2', Select2)
+Vue.component('Layout', Layout)
 Vue.component('vueMultiSelect', Multiselect);
 
 
