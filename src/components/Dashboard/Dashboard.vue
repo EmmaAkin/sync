@@ -176,6 +176,9 @@ methods:{
         font-size: 2.5em !important;
     }
 
+    .title h4 a {
+        font-size: 15px;
+    }
     .card-pink-light .value{
         color:#FF22A7 !important;
 
@@ -190,29 +193,23 @@ methods:{
     .row-listing{
         padding-left: 15px;
     }
-    .row < .content-listing{
+   /* .row < .content-listing{
         padding: 0px !important;
-    }
-    .content-listing{
-        background-color: white;
-        max-height: 360px !important;
-        margin-right: 15px !important;
-        margin-left: 15px !important;
-        padding: 0px 0px 10px 0px !important;
+    }*/
+   .content-listing{
+       /* background-color: white;*/
+        padding: 0px 15px 10px 15px !important;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
+       }
 
-    }
-    .image.center-block{
-        height:180px !important;
-    }
 
     .listing-content{
+        background-color: white;
         display: inline-block;
         padding-left: 10px;
         padding-right:  10px;
-        margin-top: -35px;
-
+        font-size: 15px; /*For the mobile screen*/
     }
 
     .listing-details-price{
@@ -222,6 +219,7 @@ methods:{
         display: inline-flex;
         float:right;
     }
+
     .listed-logo {
         float:right;
         max-height: 50px;
@@ -234,9 +232,6 @@ methods:{
 
     .icon.olx{
         opacity: 0.2;
-    }
-    .listed-rating{
-
     }
 
     .detail-features{
@@ -278,16 +273,319 @@ methods:{
     aside.app-sidebar .sidebar-menu ul.sidebar-nav > li > a .title{
         color:#fff;
     }
-    /*Retina scrren*/
-    @media screen
-        and (min-device-width: 1200px)
-        and (max-device-width: 1600px)
-        and (-webkit-min-device-pixel-ratio: 1)
-      {
-            .listing-content{
-                 margin-top: -35px;
-            }
 
+    #navbar .container-fluid{
+        padding-right: 0px !important;
+        padding-left:  0px !important;
+    }
+
+    /* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+        #navbar .container-fluid{
+                padding-right: 15px !important;
+                padding-left:  15px !important;
         }
+        .content-listing{
+        max-height: 360px !important;
+        padding: 0px 15px 10px 15px !important;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
 
+    }
+    .image.center-block{
+        height:180px !important;
+    }
+    .listing-content{
+        margin-top: -35px;
+        font-size: inherit !important;
+    }
+    .title h4 a {
+        font-size: inherit !important;
+    }
+    .detail-features{
+        font-size:15px;
+    }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+        #navbar .container-fluid{
+                padding-right: 15px !important;
+                padding-left:  15px !important;
+        }
+        .content-listing{
+        max-height: 360px !important;
+        padding: 0px 15px 10px 15px !important;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+
+    }
+    .image.center-block{
+        height:180px !important;
+    }
+     .listing-content{
+        margin-top: -35px;
+        font-size: inherit !important;
+    }
+  }
+
+        /* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+     .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+     .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+     .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+     .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+   .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+      .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+     .title h4 a{
+        font-size: 28px;
+    }
+    .listing-content{
+        font-size: 1.9em;
+        }
+    .detail-features{
+        font-size: 1.3em;
+    }
+    .listed-on{
+        margin-top: 50px;
+    }
+}
 </style>
